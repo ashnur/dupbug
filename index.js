@@ -2,10 +2,6 @@ function next(){
     stack.shift()()
 }
 
-function add(f){
-    stack.push(f)
-}
-
 function f(str, end){
 
     var browser = run()
