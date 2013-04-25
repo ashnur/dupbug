@@ -1,0 +1,24 @@
+{
+  "name": "mocha-run",
+  "description": "Run mocha tests in phantomjs and receive the results in the CLI",
+  "version": "0.0.3",
+  "main": "index.js",
+  "bin": {
+    "mocha-run": "bin/mocha-run.js"
+  },
+  "dependencies": {
+    "through": "~2.3.3",
+    "async": "~0.2.7",
+    "browser-run": "0.0.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ashnur/mocha-run.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ashnur/mocha-run/issues"
+  },
+  "author": "ashnur",
+  "license": "DAFUQ",
+  "readmeFilename": "README.md"
+}
