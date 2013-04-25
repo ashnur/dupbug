@@ -1,9 +1,10 @@
-var fs = require('fs')
-    , through = require('through')
-    , async = require('async')
-    , run = require('browser-run')
-    , strings = [ '1\n###', '2\n###', '3\n###' ]
+function next(){
+    stack.shift()()
+}
 
+function add(f){
+    stack.push(f)
+}
 
 function f(str, end){
 
@@ -15,9 +16,15 @@ function f(str, end){
         process.stdout.write(chunk)
         if ( chunk.indexOf('###') !== -1 ) {
             browser.stop()
-            end()
+            next()
         }
     }))
 }
 
-async.eachSeries(strings, f)
+var fs = require('fs')
+    , through = require('through')
+    , run = require('browser-run')
+    , strings = [ '1\n###', '2\n###', '3\n###' ]
+    , stack = strings.map(function(str){ return function(){ f(str,next) } })
+
+next()
