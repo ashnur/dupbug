@@ -1,6 +1,6 @@
 {
-  "name": "mocha-run",
-  "description": "Run mocha tests in phantomjs and receive the results in the CLI",
+  "name": "dupbug",
+  "description": "test case for mysterious bug",
   "version": "0.0.3",
   "main": "index.js",
   "bin": {
